@@ -7,10 +7,10 @@
 
 /* Basic styling */
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    color: #d1d1d1;
-    background: #36393f;
+    color: #e0e0e0;
+    background: #2e2e2e;
 }
 
 /* Container to center content and add padding */
@@ -22,40 +22,41 @@ body {
 
 /* Header styling */
 header {
-    background: #2f3136;
-    color: #d1d1d1;
+    background: linear-gradient(135deg, #1e1e1e, #363636);
+    color: #e0e0e0;
     padding: 2rem 0;
     text-align: center;
-    border-bottom: 1px solid #43464e;
+    border-bottom: 1px solid #4a4a4a;
 }
 
 header h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 0.5rem;
 }
 
 header p {
-    font-size: 1.2rem;
-    margin: 0;
+    font-size: 1.4rem;
 }
 
 /* Main content styling */
 main {
     padding: 2rem 0;
+    background: url('https://www.example.com/your-background-image.jpg') no-repeat center center fixed;
+    background-size: cover;
 }
 
 section {
     margin-bottom: 2rem;
     padding: 2rem;
-    background: #40444b;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent dark background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 section:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
 }
 
 section h2 {
@@ -71,28 +72,10 @@ ul {
 }
 
 ul li {
-    background: #4f545c;
+    background: #4a4a4a;
     margin: 0.5rem 0;
     padding: 0.5rem 1rem;
-    border-radius: 4px;
+    border-radius: 5px;
 }
 
-/* Contact link styling */
-a {
-    color: #7289da;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Footer styling */
-footer {
-    background: #2f3136;
-    color: #d1d1d1;
-    padding: 1rem 0;
-    text-align: center;
-    border-top: 1px solid #43464e;
-}
+/*
