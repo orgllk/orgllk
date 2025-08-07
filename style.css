@@ -1,0 +1,71 @@
+
+:root {
+    --bg-start: #111111;
+    --bg-end: #051c2c;
+    --accent1-start: #1f1e1e;
+    --accent1-end: #115f81;
+    --text-light: #313c4e;
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+    color: var(--text-light);
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+  .accent-gradient {
+    background: linear-gradient(45deg, var(--accent1-start), var(--accent1-end));
+    background-size: 200% 200%;
+    animation: neonShift 8s ease infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  @keyframes neonShift {
+    0%, 100% { background-position: 0% 50%; }
+    50%       { background-position: 100% 50%; }
+  }
+  .card {
+    backdrop-filter: blur(16px) saturate(180%);
+    background-color: var(--card-bg);
+    border: 1px solid rgba(105, 27, 27, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    border-radius: 1rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  .card:hover {
+    transform: scale(1.04) translateY(-4px);
+    background-color: rgba(53, 49, 70, 0.85);
+  }
+  .btn-blue, .btn-magenta {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .btn-blue:hover, .btn-magenta:hover {
+    transform: rotateX(8deg) translateY(-2px);
+    box-shadow: 0 12px 24px rgba(77, 35, 35, 0.4);
+  }
+  .btn-blue {
+    background: linear-gradient(90deg, #1c222c, #28344d);
+    background-size: 200% 200%;
+  }
+  .btn-magenta {
+    background: linear-gradient(90deg, #271b21, #1b111536);
+    background-size: 200% 200%;
+  }
+  .btn-blue:hover  { background-position: 100% 0; }
+  .btn-magenta:hover { background-position: 100% 0; }
+  .plane-icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    animation: fly 4s ease-in-out infinite;
+  }
+  @keyframes fly {
+    0%,100% { transform: translate(0,0) rotate(0deg); }
+    50%     { transform: translate(6px,-4px) rotate(-6deg); }
+  }
+  .hero-img {
+    transition: transform 0.5s ease;
+  }
+  .hero-img:hover {
+    transform: translateY(-8px) scale(1.02);
+  }
