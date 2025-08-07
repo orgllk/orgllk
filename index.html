@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Airlink – Game Panel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <style>
+    :root {
+      --bg-start: #0c0a0a;
+      --bg-end: #35414e;
+      --accent1-start: #6b5a86;
+      --accent1-end: #0ca8f1;
+      --text-light: #54627c;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+      color: var(--text-light);
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+    .accent-gradient {
+      background: linear-gradient(45deg, var(--accent1-start), var(--accent1-end));
+      background-size: 200% 200%;
+      animation: neonShift 8s ease infinite;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    @keyframes neonShift {
+      0%, 100% { background-position: 0% 50%; }
+      50%       { background-position: 100% 50%; }
+    }
+    .card {
+      backdrop-filter: blur(16px) saturate(180%);
+      background-color: var(--card-bg);
+      border: 1px solid rgba(105, 27, 27, 0.2);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      border-radius: 1rem;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.04) translateY(-4px);
+      background-color: rgba(53, 49, 70, 0.85);
+    }
+    .btn-blue, .btn-magenta {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-blue:hover, .btn-magenta:hover {
+      transform: rotateX(8deg) translateY(-2px);
+      box-shadow: 0 12px 24px rgba(77, 35, 35, 0.4);
+    }
+    .btn-blue {
+      background: linear-gradient(90deg, #1c222c, #28344d);
+      background-size: 200% 200%;
+    }
+    .btn-magenta {
+      background: linear-gradient(90deg, #6d123e, #684755);
+      background-size: 200% 200%;
+    }
+    .btn-blue:hover  { background-position: 100% 0; }
+    .btn-magenta:hover { background-position: 100% 0; }
+    .plane-icon {
+      width: 1.75rem;
+      height: 1.75rem;
+      animation: fly 4s ease-in-out infinite;
+    }
+    @keyframes fly {
+      0%,100% { transform: translate(0,0) rotate(0deg); }
+      50%     { transform: translate(6px,-4px) rotate(-6deg); }
+    }
+    .hero-img {
+      transition: transform 0.5s ease;
+    }
+    .hero-img:hover {
+      transform: translateY(-8px) scale(1.02);
+    }
+  </style>
+</head>
+<body>
+  <nav class="fixed top-0 w-full z-50 bg-opacity-60 backdrop-blur-lg border-b border-gray-700">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center text-2xl font-bold accent-gradient">
+        ORGLLK
+      </div>
+      <div class="space-x-6">
+        <a href="https://github.com/orgllk" target="_blank" class="text-gray-300 hover:text-blue-500 transition">GitHub</a>
+        <a href="https://discord.gg/3KXz2WSPHm target="_blank" class="text-gray-300 hover:text-blue-500 transition">Discord</a>
+      </div>
+    </div>
+  </nav>
+  
+
+  <section class="min-h-screen flex items-center justify-center pt-24">
+    <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6">
+        <h1 class="text-5xl md:text-6xl font-extrabold leading-tight">
+          Hello World 
+          <span class="accent-gradient">
+            ORGLLK</span>
+        </h1>
+        <p class="text-lg text-blue-300">
+          Hello! I'm orgllk. I have experience with Arduino, Python, and HTML. I also enjoy playing Minecraft and exploring technology.
+ 
+        </p>
+        <div class="flex space-x-4">
+          <a href="https://Web.vortan.xyz" target="_blank" class="card inline-flex items-center px-6 py-3 btn-blue text-white font-medium">
+            Votan MC
+          </a>
+          <a href="https://discord.gg/3KXz2WSPHm" target="_blank" class="card inline-flex items-center px-6 py-3 btn-magenta text-white font-medium">
+            Join Discord
+          </a>
+        </div>
+      </div>
+      <div class="card overflow-hidden border border-gray-700">
+        <img src="https://media.discordapp.net/attachments/1161168629178585088/1340411641128292395/image.png?ex=6895adde&is=68945c5e&hm=dea51be34e58d3ab6ebe906dea7ebe26f0f493ddf1e5640e41337c9cadc56b18&=&format=webp&quality=lossless&width=1053&height=537" alt="Dashboard Preview" class="hero-img w-full rounded-xl border border-gray-700"/>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="py-20">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12 accent-gradient">My Projects</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="card p-6 border border-gray-700">
+          <img src="Screenshot 2025-08-07 211354.png "alt="Easy Setup" class="w-full h-40 object-cover rounded-lg mb-4 border border-gray-700"/>
+          <h3 class="text-xl font-semibold mb-2 text-indigo-400">Automatic pump controller</h3>
+          <p class="text-gray-300">Automatic pump controller made of Arduino with 2 ultrasonic sensor.</p>
+        </div>
+        <div class="card p-6 border border-gray-700">
+          <img src="vortan.png" alt="Performance" class="w-full h-40 object-cover rounded-lg mb-4 border border-gray-700"/>
+          <h3 class="text-xl font-semibold mb-2 text-indigo-400">      Votan MC</h3>
+          <p class="text-blue-300">Simple minecraft pvp server.</p>
+        </div>
+        <div class="card p-6 border border-gray-700">
+          <img src="https://i.imgur.com/0xA0G4t.png" alt="Free Forever" class="w-full h-40 object-cover rounded-lg mb-4 border border-gray-700"/>
+          <h3 class="text-xl font-semibold mb-2 text-indigo-400">Free Forever</h3>
+          <p class="text-gray-300">Open source and free to use, with optional premium features.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="py-20 text-center">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-8 accent-gradient">Github of Projects</h2>
+      <div class="flex justify-center space-x-6">
+        <a href="https://github.com/orgllk/Automatic-pump-controller" target="_blank" class="px-12 py-4 btn-blue rounded-xl text-white font-semibold transition">Automatic pump controller</a>
+        <a href="https://discord.gg/hwEtBUmMpy" target="_blank" class="px-12 py-4 btn-magenta rounded-xl text-white font-semibold transition">Automated house</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-2 text-center text-gray-400 border-t border-gray-700">
+    <p>© 2025 Orgllk .</p>
+  </footer>
+</body>
+</html>
